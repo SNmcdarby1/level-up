@@ -1,0 +1,1 @@
+web: gunicorn Level-Up.wsgi:application
