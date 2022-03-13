@@ -71,7 +71,7 @@ body {
 }
 
 .bg-black {
-    background: #000 !important;
+    background: rgb(114, 99, 99) !important;
 }
 
 .overlay {
@@ -166,7 +166,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-dark {
-    border-bottom-color: #343a40 !important;
+    border-bottom-color: #a8cef5 !important;
 }
 
 .bag-notification-wrapper {

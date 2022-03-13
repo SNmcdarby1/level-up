@@ -1,5 +1,5 @@
 """
-ASGI config for level_up project.
+ASGI config for levelmoja project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'level_up.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'levelmoja.settings')
 
 application = get_asgi_application()
