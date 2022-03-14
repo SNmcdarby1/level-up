@@ -23,6 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-o51e__yvz_0(qi%38=0mh#198^k-v%q%bf$a^fe))s$0h1%l$@'
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -83,6 +88,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
+                'session_csrf.context_processor',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

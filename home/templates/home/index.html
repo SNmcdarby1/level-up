@@ -49,44 +49,76 @@
 <section class="py-5  px-5 border-bottom" id="features">
     <div class="container px-5 my-5">
         <div class="row gx-5">
-            <div class="col-lg-4 card mb-4 mb-5 px-5 mb-lg-0">
+            <div class="col-lg-3 card mb-4 mb-5 px-5 mb-lg-0">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i>
                 </div>
                 <h2 class="h4 fw-bolder">Featured title</h2>
                 <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
                     and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <a class="text-decoration-none" href="{% url 'products' %}?category=bed_bath,kitchen_dining"
+                    class="dropdown-item">
+                    Homeware
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-lg-4 card mb-4 mb-5 px-5 mb-lg-0">
+            <div class="col-lg-3 card mb-4 mb-5 px-5 mb-lg-0">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i>
                 </div>
                 <h2 class="h4 fw-bolder ">Featured title</h2>
                 <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
                     and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <a class="text-decoration-none" href="{% url 'products' %}?category=activewear,essentials,jeans,shirts"
+                    class="dropdown-item">
+                    Active wear
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-lg-4 card mb-4 mb-5 px-5 mb-lg-0">
+
+            <div class="col-lg-3 card mb-4 mb-5 px-5 mb-lg-0">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i>
                 </div>
                 <h2 class="h4 fw-bolder">Featured title</h2>
                 <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
                     and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <a class="text-decoration-none" href="{% url 'products' %}?category=new_arrivals,deals,clearance"
+                    class="dropdown-item">
+                    Special offers
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
+            <div class="col-lg-3 card mb-4 mb-5 px-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Featured title</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a class="text-decoration-none" href="{% url 'products' %}?category=new_arrivals,deals,clearance"
+                    class="dropdown-item">
+                    All Special
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    All Products
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                    <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By
+                        Price</a>
+                    <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By
+                        Rating</a>
+                    <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                        Category</a>
+                    <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
 <!-- Pricing section-->
-
 
 <!-- About section one-->
 <section class="py-5 bg-light" id="scroll-target">
@@ -96,6 +128,7 @@
                     src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
             <div class="col-lg-6">
                 <h2 class="fw-bolder">Our founding</h2>
+
                 <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing
                     elit.
                     Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero
@@ -104,6 +137,8 @@
             </div>
         </div>
     </div>
+
+
 </section>
 <!-- About section two-->
 <section class="py-5 ">
@@ -297,6 +332,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <!-- Header-->
@@ -441,11 +477,11 @@
                         <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
+                    <!--Submit success message-->
+
+                    <!--This is what your users will see when the form-->
                     <!-- has successfully submitted-->
-                    <!-- <div class="d-none" id="submitSuccessMessage">
+                    <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center mb-3">
                             <div class="fw-bolder">Form submission successful!</div>
                             To activate this form, sign up at
@@ -453,11 +489,11 @@
                             <a
                                 href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                         </div>
-                    </div> -->
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
+                    </div>
+                    <!--Submit error message-->
+
+                    <!-- This is what your users will see when there is
+                    an error submitting the form -->
                     <div class="d-none" id="submitErrorMessage">
                         <div class="text-center text-danger mb-3">Error sending message!</div>
                     </div>
