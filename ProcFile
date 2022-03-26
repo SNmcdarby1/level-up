@@ -1,1 +1,1 @@
-web: gunicorn Level-Up.wsgi:application
+web: python manage.py collectstatic --no-input && gunicorn Level-Up.wsgi:application --pythonpath ghiblimovs mysite.wsgi --log-file –
