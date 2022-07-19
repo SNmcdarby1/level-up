@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import env
+import environ
 from pathlib import Path
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'http://127.0.0.1:8000/' 'https://levelmoja.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = [
+    'http://127.0.0.1:8000/' 'https://levelmoja.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
     'bag',
 
 
- # Other
+    # Other
     'crispy_forms',
 ]
 
@@ -83,7 +84,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -97,7 +98,7 @@ TEMPLATES = [
         },
 
     },
-    
+
 ]
 
 WSGI_APPLICATION = 'levelmoja.wsgi.application'
@@ -162,12 +163,11 @@ if 'DATABASE_URL' in os.environ:
     }
 else:
     DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
-
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -207,8 +207,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-#https
-    
+# https
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
@@ -230,7 +230,11 @@ else:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+    def jls_extract_def():
+        return os
+
+    DEFAULT_FROM_EMAIL = jls_extract_def().environ.get('EMAIL_HOST_USER')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
